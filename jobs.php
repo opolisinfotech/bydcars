@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row pv-30 working-with-byd">
                     <div class="col-12 col-xs-12 col-sm-12 col-md-6">
-                        <h1 class="heading-2">Working at BYD</h1>
+                        <h1 class="heading-2">Working at BYD - New Update</h1>
                         <p class="">We at BYD India work towards achieving Technological Innovations For A Better Life.<br>BYD is a global market leader in the Green Energy Segment and has been expanding its footprint in India for more than 15 years now, across all major cities.</p>
                         <p class="">We as global pioneers of the New Energy Vehicle Industry understand our responsibility towards a transport emission-free tomorrow and welcome you to join us, in ensuring a <strong>Technology Green Future</strong></p>
                     </div>
@@ -94,14 +94,9 @@
             <i class="icon-envelope"></i>
             <div class="container">
                 <div class="row">
-                    <div class="news-subscription text-center">
-                        <h2 class="heading-2">STAY TUNED WITH BYD</h2>
-                        <p class="mb-40">Get the latest news, product updates and events updates</p>
-                        <form class="news-subscription-form">
-                            <input type="text" placeholder="Enter your email" />
-                            <button type="button">GET</button>
-                        </form>
-                    </div>
+                    <?php
+    include('includes/newsletter.php');
+?>
                 </div>
             </div>
         </section>
