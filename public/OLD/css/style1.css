@@ -1,0 +1,66 @@
+
+/*****************16-11-2019**************/
+
+/**about-us-page**/
+.inner-pt-0 {padding-top: 0px;}
+.inner-pb-0{ padding-bottom: 0px; }
+.inner-slide {max-width: 800px;margin: 0 auto;text-align: center;}
+.in-page-service .other-text {min-height: 205px;}
+.about-p-item .time {text-align: center;margin-bottom: 15px;}
+.about-p-item .time img {border-radius: 50%;}
+.about-p-item .item {background: #fff;padding: 15px 20px;margin: 20px 0px;min-height: 298px;box-shadow: 2px 5px 7px #c7c7c7;}
+.about-p-item p.info {min-height:260px !important;}
+.about-p-item .item:hover {background: #43bded;color: #fff;box-shadow: none; transition: all 0.5s;}
+.about-p-item .item:hover a.btn.btn-apply {background: #fff;color: #000;}
+.about-p-item .item:hover p.info {color: #fff;}
+.about-p-item .owl-nav, .about-p-item .owl-nav {top: 50%;}
+/********howard-university-school-of-social-work-case-history-page******/
+a.btn.btn-explore.sn{fONT-SIZE: 16PX;background: #43bded;border-radius: 0px;color: #fff;font-weight: 600;padding: 15px 26px;
+margin: 10px 0px 15px 0px;box-shadow: 0px 6px 7px #bdbcbd;}
+a.btn.btn-explore.sn:hover {background: #353636;}
+.h-university .other-text {min-height: 230px;}
+/*******meadia-center-page*******/
+.media-c .other-text {min-height: 205px;}
+/******blog-page********/
+.tabs-blog .nav-tabs {border-bottom: 0px;text-align: center;}
+.tabs-blog .nav-tabs>li {float: none;    display: inline-block;}
+.tabs-blog .nav-tabs>li a {text-transform: capitalize;background: #43bded;color: #fff;border-radius: 0px;padding: 4px 25px;
+margin-bottom: 4px;}
+.tabs-blog .item h3{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.tabs-blog .item p.info{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+/***********info-sheet*******/
+
+.Info.Sheets_p .item {min-height: 380px;}
+.Info.Sheets_p .item p.info {min-height: 252px;}
+/****our-video-page*****/
+.our-video_p .item h3{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.our-video_p .item {margin-bottom: 20px;}
+.video_p .owl-dots {display: none !important;}
+/*****services-page*****/
+.services_p .other-text {min-height: 225px;}
+/******it-goverment-page*****/
+.it-gov .other-text{min-height: 175px;}
+/******cloud-com******/
+ul.nav.nav-tabs.cloud-com li {width: 50%;}
+/****risk-managment*******/
+.risk-manag .other-text {min-height: 200px;}
+
+/**********Home-service-icon*******/
+.item a.services-icon1 {background: url(../images/ind-1.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;top: -5px;}
+.item a.services-icon2 {background: url(../images/ind-2.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon3 {background: url(../images/ind-3.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon4 {background: url(../images/ind-4.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon5 {background: url(../images/ind-5.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon6 {background: url(../images/ind-6.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon7 {background: url(../images/ind-7.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon8 {background: url(../images/ind-8.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}
+.item a.services-icon9 {background: url(../images/ind-9.png) no-repeat;padding: 35px;
+display: inline-block;position: relative;}

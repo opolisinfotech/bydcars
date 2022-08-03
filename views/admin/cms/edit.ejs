@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../elements/header'); %>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+  <%- include('../elements/navigation'); %>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <%- include('../elements/sidebar'); %>
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-left">
+              <li class="breadcrumb-item"><a href="<%=nodeAdminUrl%>/Dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item active">CMS</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Edit CMS</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form  name="cms" action="<%=nodeAdminUrl%>/cms/edit/<%=data[0].sn%>" method="post">
+                <div class="card-body">
+				
+				<div class="form-group">
+                    <label for="address">Page Title*</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<%=data[0].title%>" placeholder="Enter page title" readonly>
+					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<span class="error"><%=errorData.title%> </span>
+                </div>
+				<div class="form-group">
+				<label>Body</label>
+                <textarea class="textarea" id="full_description" name="full_description" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><%=slashes.removeSlashes(data[0].full_description)%></textarea>
+                </div>
+				<div class="form-group">
+                    <label for="meta_title">Meta Title *</label>
+                    <input type="text" class="form-control" id="meta_title" name="meta_title" value="<%=data[0].meta_title %>" placeholder="Enter meta title" required>
+					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<span class="error"><%=errorData.meta_title%> </span>
+                </div>
+				
+				<div class="form-group">
+                    <label for="meta_keywords">Meta Keywords [Optional]</label>
+                    <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="<%=data[0].meta_keywords %>" placeholder="Enter meta keywords">
+					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<span class="error"><%=errorData.meta_keywords%> </span>
+                </div>
+				
+				<div class="form-group">
+				<label>Meta Description</label>
+                <textarea id="meta_description" name="meta_description" placeholder="Enter meta description"
+                          style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" required pattern=".*\S+.*"><%= data[0].meta_description %></textarea>
+                </div>
+				
+				<div class="form-group">
+				<label>Tracking/Analytics code [Optional]</label>
+                <textarea id="tracking_code" name="tracking_code" placeholder="Enter tracking code"
+                          style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" ><%= data[0].tracking_code %></textarea>
+                </div>
+				
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+				  <input type="hidden" name="sn" id="sn" value="<%=data[0].sn%>"> 
+                  <button type="submit" class="btn btn-primary">Submit</button>
+				  <button type="submit" class="btn btn-default float-right">Cancel</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col-->
+      </div>
+      <!-- ./row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%- include('../elements/footer'); %>
+</div>
+<!-- ./wrapper -->
+<%- include('../elements/js'); %>
+<script>
+  $(function () {
+    // Summernote
+    $('#full_description').summernote()
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title><%= siteTitle %></title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/adminlte/dist/css/adminlte.css">
+  <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/adminlte/dist/css/custom-admin.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+<div class="login-logo">
+    <a href="#"><img src="/adminlte/dist/img/logo.png" alt="ByD Cars"></a>
+</div>
+<div class="login-box-outer">
+<div class="login-box-body">
+<p class="login-box-msg">Sign in to start your session</p>
+<form action="<%=nodeAdminUrl%>/login" method="post">
+    <input type="hidden" name="role_id" value="0">
+    <input type="hidden" name="device_token" value="1254512">
+    <input type="hidden" name="device_type" value="212121">
+    <div class="form-group has-feedback">
+        <input value="<%=data.email%>" type="text" name="email" id="email" class="form-control" placeholder="Enter email address" required pattern=".*\S+.*">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <span class="error"><%=errorData.email%></span> 
+    </div>
+    <div class="form-group has-feedback">
+        <input value="<%=data.password%>" type="password" name="password" id="password" class="form-control" placeholder="Enter password" required pattern=".*\S+.*">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <span class="error"><%=errorData.password%> </span> 
+    </div>
+    <div class="row m-0">
+       
+        <!-- /.col -->
+        <div class="col-sm-12 pl-0 pr-3">
+            <button type="submit" id="submit" class="btn btn-primary btn-login btn-block btn-flat btn-admn">Sign In</button>
+            <span class="error"><%=errorData.loginError%> </span> 
+        </div>
+        <!-- /.col -->
+    </div>
+</form>
+<!-- /.social-auth-links -->
+<!-- <a href="#">I forgot my password</a> -->
+<br>
+</div>
+</div>
+</div>
+<script src="/adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/adminlte/dist/js/adminlte.js"></script>
+<script src="/adminlte/plugins/chart.js/Chart.min.js"></script>
+<script src="/adminlte/dist/js/demo.js"></script>
+<script src="/adminlte/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>
