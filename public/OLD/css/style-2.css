@@ -1,0 +1,24 @@
+.services-inner-bg{background: url(../images/blog-bg.jpg) repeat;}
+.services-inner-bg .other-text{background: #fff;min-height: 205px}
+
+ul.bulet-list{}
+ul.bulet-list li{position: relative;
+    padding-left: 20px;
+    line-height: 30px;
+    padding-bottom: 7px;}
+ul.bulet-list li:before{position: absolute;
+    content: "";
+    top: 12px;
+    left: 0;
+    background: #000;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;}
+.banner-top-video{display: flex;}
+.banner-top-video .left-sec{float: left;width: 60%;padding-left: 7.5%;}
+.banner-top-video .left-sec h1{/*float: none;*/}
+.banner-top-video .left-sec a{/*float: none;display: inline-block;margin-bottom: 10px*/}
+.banner-top-video .right-sec{float: right;width: 40%;background: #0c0c0cfa;position: relative;margin-right:7.5%;}
+.banner-top-video .right-sec a.vdo{position: absolute;left: 50%;top: 50%;font-size: 60px;transform: translate(-50%, -50%);}
+.banner-top-video .right-sec a.vdo:before{position: absolute;content: '';width: 30px;height: 30px;background: #fff;top: 15px;left: 15px;z-index: -1;}
+.banner-top-video .right-sec a.vdo:hover{color: red}

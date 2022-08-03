@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../elements/header'); %>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+  <%- include('../elements/navigation'); %>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <%- include('../elements/sidebar'); %>
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-left">
+              <li class="breadcrumb-item"><a href="<%=nodeAdminUrl%>/Dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item active">Careers</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+			  <div class="row mb-2">
+				<div class="col-sm-6"><h3 class="card-title">Careers</h3></div>
+				<div class="col-sm-6"><a href="<%=nodeAdminUrl%>/careers/add" class="float-right">Add careers</a></div>
+			  </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+				<thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Position Name</th>
+				  <th>Salary</th>
+				  <th>Experience</th>
+				  <th>Address</th>
+				  <th>Industry Preferred</th>
+				  <th>Qualification</th>
+                  <th class="rsicon">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+				<% if(data.length){ 
+				data.forEach((datarow, index) => { %>
+                <tr>
+                  <td><%= datarow.sn %></td>
+				  <td><%= datarow.name %></td>
+				  <td><%= datarow.salary %></td>
+				  <td><%= datarow.experience %></td>
+				  <td><%= datarow.address %></td>
+				  <td><%= datarow.industry_preferred %></td>
+                  <td><%= datarow.qualification %></td>
+                  <td>
+				  <% if(datarow.status){ %>
+				   <button type="button" class="btn btn-default btn-sm status">
+				   <a href="<%=nodeAdminUrl%>/careers/deactivate/<%= datarow.sn %>" title"This is active, click to de-activate it">
+				   <span style="color: green;" class="fas fa-lock-open"></span></a></button>
+				  <% }else{ %> 
+				   <button type="button" class="btn btn-default btn-sm status"><a href="<%=nodeAdminUrl%>/careers/activate/<%= datarow.sn %>" title"This is de-active, click to activate it" ><span style="color: red;"  class="fas fa-lock"></span></a>
+			     </button>
+				  <% }%>  				
+				  <a href="<%=nodeAdminUrl%>/careers/edit/<%= datarow.sn %>">Edit</a> | <a href="<%=nodeAdminUrl%>/careers/delete/<%= datarow.sn %>" onClick="return confirm('Are you sure you want to delete ?')">Delete</a></td>
+                </tr>
+				<% }) %>
+                </tbody>
+                <!--<tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Position Name</th>
+				  <th>Salary</th>
+				  <th>Experience</th>
+				  <th>Address</th>
+				  <th>Industry Preferred</th>
+				  <th>Qualification</th>
+                  <th class="rsicon">Action</th>
+                </tr>
+                </tfoot>-->
+				<% } else { %>
+				 <tr>
+				 <td class="text-center" colspan="8">No data found.</td>
+				 </tr>
+                <% } %>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <%- include('../elements/footer'); %>
+</div>
+<!-- ./wrapper -->
+<%- include('../elements/js'); %>
+<!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+</script>
+</body>
+</html>
